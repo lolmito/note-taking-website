@@ -1,8 +1,16 @@
-version: 0.1
+componentVersion: 1.0.0
 
-endpoints:
+name: my-django-api
+
+build:
+  buildpacks:
+    - python
+
+container:
+  port: 8000
+
+ingress:
   - name: "REST API"
-    type: REST
     port: 8000
-    context: /
+    type: REST
     networkVisibility: Public
